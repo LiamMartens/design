@@ -7,4 +7,9 @@ export default defineScope('color', 'Color', [
     title: 'Overview',
     component: lazy(() => import('./color/overview')),
   },
+  {
+    name: 'grid',
+    title: 'Grid',
+    component: lazy(() => import('./color/grid')),
+  },
 ])
