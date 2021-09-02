@@ -9,10 +9,18 @@ export * from './types'
  * The black color value.
  * @public
  */
-export const black: ColorValue = {title: 'Black', hex: blackHex}
+export const black: ColorValue = {
+  title: 'Black',
+  hex: blackHex,
+  contrast: {onBlack: 1.11, onWhite: 18.9},
+}
 
 /**
  * The white color value.
  * @public
  */
-export const white: ColorValue = {title: 'White', hex: whiteHex}
+export const white: ColorValue = {
+  title: 'White',
+  hex: whiteHex,
+  contrast: {onBlack: 21, onWhite: 1},
+}

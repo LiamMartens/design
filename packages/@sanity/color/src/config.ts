@@ -1,76 +1,111 @@
-import {ColorHueConfig} from './types'
+import {ColorHueConfig, ColorHueKey} from './types'
 
-export const black = '#121923'
-export const white = '#fff'
-
-export const gray: ColorHueConfig = {
-  title: 'Gray',
-  darkest: black,
-  mid: '#8690A0',
-  lightest: white,
-  midPoint: 500,
+/**
+ * @internal
+ */
+export interface ColorConfig {
+  black: string
+  white: string
+  hues: Record<ColorHueKey, ColorHueConfig>
 }
 
-export const red: ColorHueConfig = {
-  title: 'Red',
-  darkest: black,
-  mid: '#F03E2F',
-  lightest: white,
-  midPoint: 500,
-}
+/**
+ * @internal
+ */
+export const white = '#ffffff'
 
-export const orange: ColorHueConfig = {
-  title: 'Orange',
-  darkest: black,
-  mid: '#FB7D24',
-  lightest: white,
-  midPoint: 450,
-}
+/**
+ * @internal
+ */
+export const black = '#101820'
 
-export const yellow: ColorHueConfig = {
-  title: 'Yellow',
-  darkest: black,
-  mid: '#FBD024',
-  lightest: white,
-  midPoint: 300,
-}
-
-export const green: ColorHueConfig = {
-  title: 'Green',
-  darkest: black,
-  mid: '#43D675',
-  lightest: white,
-  midPoint: 400,
-}
-
-export const cyan: ColorHueConfig = {
-  title: 'Cyan',
-  darkest: black,
-  mid: '#22DAF4',
-  lightest: white,
-  midPoint: 400,
-}
-
-export const blue: ColorHueConfig = {
-  title: 'Blue',
-  darkest: black,
-  mid: '#2276FC',
-  lightest: white,
-  midPoint: 500,
-}
-
-export const purple: ColorHueConfig = {
-  title: 'Purple',
-  darkest: black,
-  mid: '#C123FC',
-  lightest: white,
-  midPoint: 500,
-}
-
-export const magenta: ColorHueConfig = {
-  title: 'Magenta',
-  darkest: black,
-  mid: '#E5389E',
-  lightest: white,
-  midPoint: 500,
+/**
+ * @internal
+ */
+export const config: ColorConfig = {
+  black,
+  white,
+  hues: {
+    gray: {
+      title: 'Gray',
+      stops: {
+        0: white,
+        300: '#B0BAC6',
+        600: '#5c697c',
+        1000: black,
+      },
+    },
+    red: {
+      title: 'Red',
+      stops: {
+        0: white,
+        300: '#F68D93',
+        550: '#F03E2F',
+        1000: black,
+      },
+    },
+    orange: {
+      title: 'Orange',
+      stops: {
+        0: white,
+        375: '#FB7D24',
+        600: '#BA550E',
+        1000: black,
+      },
+    },
+    yellow: {
+      title: 'Yellow',
+      stops: {
+        0: white,
+        200: '#FFCC00',
+        550: '#A26B00',
+        // 800: '#53391A',
+        1000: black,
+      },
+    },
+    green: {
+      title: 'Green',
+      stops: {
+        0: white,
+        300: '#43D675',
+        600: '#068849',
+        1000: black,
+      },
+    },
+    cyan: {
+      title: 'Cyan',
+      stops: {
+        0: white,
+        275: '#22DAF4',
+        600: '#078294',
+        1000: black,
+      },
+    },
+    blue: {
+      title: 'Blue',
+      stops: {
+        0: white,
+        300: '#7ABEFC',
+        500: '#2276FC',
+        1000: black,
+      },
+    },
+    purple: {
+      title: 'Purple',
+      stops: {
+        0: white,
+        500: '#C123FC',
+        1000: black,
+      },
+    },
+    magenta: {
+      title: 'Magenta',
+      stops: {
+        0: white,
+        300: '#FF6DC3',
+        500: '#E5389E',
+        1000: black,
+      },
+    },
+  },
 }

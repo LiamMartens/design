@@ -2,11 +2,32 @@
  * @public
  */
 export interface ColorHueConfig {
-  darkest: string
-  mid: string
-  lightest: string
-  midPoint: number
+  /**
+   * @deprecated
+   */
+  darkest?: string
+
+  /**
+   * @deprecated
+   */
+  mid?: string
+
+  /**
+   * @deprecated
+   */
+  lightest?: string
+
+  /**
+   * @deprecated
+   */
+  midPoint?: number
+
   title: string
+
+  /**
+   * @beta
+   */
+  stops?: Partial<Record<string, string>>
 }
 
 /**
@@ -15,6 +36,10 @@ export interface ColorHueConfig {
 export interface ColorValue {
   hex: string
   title: string
+  contrast: {
+    onBlack: number
+    onWhite: number
+  }
 }
 
 /**
