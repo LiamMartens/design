@@ -1,6 +1,6 @@
 import {ColorHueConfig} from './types'
 
-export const black = '#101112'
+export const black = '#121923'
 export const white = '#fff'
 
 export const gray: ColorHueConfig = {
