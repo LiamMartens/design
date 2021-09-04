@@ -21,14 +21,14 @@ export const color = createColorTheme({
 
       return {
         fg: dark ? white.hex : black.hex,
-        bg: dark ? black.hex : white.hex,
+        bg: dark ? hues.gray[950].hex : white.hex,
         border: hues.gray[dark ? 800 : 200].hex,
         focusRing: hues.blue[dark ? 500 : 500].hex,
         shadow: {
           outline: rgba(hues.gray[500].hex, 0.4),
-          umbra: rgba(dark ? black.hex : hues.gray[500].hex, 0.2),
-          penumbra: rgba(dark ? black.hex : hues.gray[500].hex, 0.14),
-          ambient: rgba(dark ? black.hex : hues.gray[500].hex, 0.12),
+          umbra: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.4 : 0.2),
+          penumbra: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.28 : 0.14),
+          ambient: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.24 : 0.12),
         },
         skeleton: {
           from: skeletonFrom,
@@ -43,14 +43,14 @@ export const color = createColorTheme({
 
       return {
         fg: tints[dark ? 100 : 900].hex,
-        bg: tints[dark ? 950 : 50].hex,
+        bg: tints[dark ? 900 : 50].hex,
         border: tints[dark ? 800 : 300].hex,
         focusRing: hues.blue[500].hex,
         shadow: {
           outline: rgba(tints[500].hex, dark ? 0.2 : 0.4),
-          umbra: rgba(dark ? black.hex : tints[500].hex, 0.2),
-          penumbra: rgba(dark ? black.hex : tints[500].hex, 0.14),
-          ambient: rgba(dark ? black.hex : tints[500].hex, 0.12),
+          umbra: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.4 : 0.2),
+          penumbra: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.28 : 0.14),
+          ambient: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.24 : 0.12),
         },
         skeleton: {
           from: skeletonFrom,
@@ -69,9 +69,9 @@ export const color = createColorTheme({
       focusRing: tints[500].hex,
       shadow: {
         outline: rgba(tints[500].hex, dark ? 0.2 : 0.4),
-        umbra: rgba(dark ? black.hex : tints[500].hex, 0.2),
-        penumbra: rgba(dark ? black.hex : tints[500].hex, 0.14),
-        ambient: rgba(dark ? black.hex : tints[500].hex, 0.12),
+        umbra: rgba(dark ? black.hex : tints[500].hex, dark ? 0.4 : 0.2),
+        penumbra: rgba(dark ? black.hex : tints[500].hex, dark ? 0.28 : 0.14),
+        ambient: rgba(dark ? black.hex : tints[500].hex, dark ? 0.24 : 0.12),
       },
       skeleton: {
         from: skeletonFrom,
@@ -492,7 +492,7 @@ export const color = createColorTheme({
       },
       code: {
         bg: mix(base.bg, tints[dark ? 950 : 50].hex),
-        fg: tints[dark ? 400 : 600].hex,
+        fg: tints[dark ? 200 : 700].hex,
       },
       skeleton: {
         from: skeletonFrom,
@@ -592,8 +592,8 @@ export const color = createColorTheme({
 
   syntax: ({base, dark}) => {
     const mix = dark ? screen : multiply
-    const mainShade = dark ? 400 : 600
-    const secondaryShade = dark ? 600 : 400
+    const mainShade = dark ? 300 : 600
+    const secondaryShade = dark ? 700 : 400
 
     return {
       atrule: mix(base.bg, hues.purple[mainShade].hex),
