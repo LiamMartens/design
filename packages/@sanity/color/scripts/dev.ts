@@ -22,6 +22,7 @@ watcher.on('all', () => {
 
   generate(config)
 
+  // eslint-disable-next-line no-console
   console.log('Compiled')
 })
 

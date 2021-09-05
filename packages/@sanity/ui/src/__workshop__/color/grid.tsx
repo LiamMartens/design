@@ -36,6 +36,7 @@ function Cell(props: {color: ColorValue; column?: number}) {
         })
       })
       .catch((err) => {
+        // eslint-disable-next-line no-console
         console.log(err)
         pushToast({
           status: 'error',
