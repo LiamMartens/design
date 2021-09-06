@@ -1,9 +1,9 @@
 import {black, ColorTints, hues, white} from '@sanity/color'
 import {rgba} from '../lib/color-fns'
-import {createColorTheme} from '../lib/theme'
+import {createColorTheme, ThemeColorToneKey} from '../lib/theme'
 import {multiply, screen} from './helpers'
 
-const tones: {[key: string]: ColorTints} = {
+const tones: Record<ThemeColorToneKey, ColorTints> = {
   default: hues.gray,
   transparent: hues.gray,
   primary: hues.blue,
@@ -593,7 +593,7 @@ export const color = createColorTheme({
   syntax: ({base, dark}) => {
     const mix = dark ? screen : multiply
     const mainShade = dark ? 300 : 600
-    const secondaryShade = dark ? 700 : 400
+    const secondaryShade = dark ? 500 : 400
 
     return {
       atrule: mix(base.bg, hues.purple[mainShade].hex),

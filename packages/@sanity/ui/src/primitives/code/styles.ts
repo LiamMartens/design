@@ -50,6 +50,7 @@ export function codeBaseStyle(): FlattenInterpolation<StyledThemeProps<Theme>> {
     color: var(--card-code-fg-color);
 
     & code {
+      display: block !important;
       font-family: inherit;
 
       &.refractor .token {

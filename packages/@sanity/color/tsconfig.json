@@ -4,6 +4,10 @@
   "compilerOptions": {
     "rootDir": "../../../",
     "outDir": "./lib/dts/",
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@sanity/color": ["./src"]
+    }
   }
 }
