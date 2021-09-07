@@ -9,6 +9,8 @@ export interface ColorConfig {
   hues: Record<ColorHueKey, ColorHueConfig>
 }
 
+const FEATURE_WARM_GRAY = false
+
 /**
  * @internal
  */
@@ -28,20 +30,25 @@ export const config: ColorConfig = {
   hues: {
     gray: {
       title: 'Gray',
-      stops: {
-        0: white,
-        515: '#7E8993',
-        // 299: '#B0BAC6',
-        // 600: '#5c697c',
-        1000: black,
-      },
+      stops: FEATURE_WARM_GRAY
+        ? {
+            0: white,
+            555: '#8A7D7C',
+            1000: black,
+          }
+        : {
+            0: white,
+            523: '#808B97',
+            1000: black,
+          },
     },
     red: {
       title: 'Red',
       stops: {
         0: white,
-        368: '#F68D93',
-        546: '#F03E2F',
+        300: '#FF959A',
+        500: '#FF473C',
+        559: '#F03E2F',
         1000: black,
       },
     },
@@ -50,7 +57,8 @@ export const config: ColorConfig = {
       stops: {
         0: white,
         407: '#FB7D24',
-        606: '#BA550E',
+        490: '#EE6300',
+        621: '#BA550E',
         1000: black,
       },
     },
@@ -58,9 +66,9 @@ export const config: ColorConfig = {
       title: 'Yellow',
       stops: {
         0: white,
-        190: '#FFCC00',
-        591: '#A26B00',
-        // 800: '#53391A',
+        216: '#E5C752',
+        467: '#C38800',
+        604: '#A26B00',
         1000: black,
       },
     },
@@ -68,8 +76,9 @@ export const config: ColorConfig = {
       title: 'Green',
       stops: {
         0: white,
-        287: '#43D675',
-        590: '#068849',
+        305: '#45D07D',
+        // 490: '#00A54C',
+        597: '#058959',
         1000: black,
       },
     },
@@ -77,8 +86,9 @@ export const config: ColorConfig = {
       title: 'Cyan',
       stops: {
         0: white,
-        240: '#22DAF4',
-        590: '#078294',
+        300: '#0CCBD7',
+        465: '#00A4BA',
+        599: '#00829D',
         1000: black,
       },
     },
@@ -87,7 +97,7 @@ export const config: ColorConfig = {
       stops: {
         0: white,
         310: '#7ABEFC',
-        563: '#2276FC',
+        577: '#2276FC',
         1000: black,
       },
     },
@@ -96,7 +106,7 @@ export const config: ColorConfig = {
       stops: {
         0: white,
         390: '#db80fd',
-        575: '#C123FC',
+        587: '#C123FC',
         1000: black,
       },
     },
@@ -105,7 +115,7 @@ export const config: ColorConfig = {
       stops: {
         0: white,
         398: '#FF6DC3',
-        548: '#E5389E',
+        504: '#FF3FB0',
         1000: black,
       },
     },

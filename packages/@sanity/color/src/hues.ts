@@ -8,90 +8,90 @@ import {ColorTints} from './types'
 export const gray: ColorTints = {
   '50': {
     title: 'Gray 50',
-    hex: '#f2f3f4',
+    hex: '#f2f3f5',
     contrast: {
-      onBlack: 16.02,
+      onBlack: 16.03,
       onWhite: 1.11,
     },
   },
   '100': {
     title: 'Gray 100',
-    hex: '#e5e8ea',
+    hex: '#e6e8eb',
     contrast: {
-      onBlack: 14.46,
+      onBlack: 14.49,
       onWhite: 1.23,
     },
   },
   '200': {
     title: 'Gray 200',
-    hex: '#ccd1d5',
+    hex: '#ced2d7',
     contrast: {
-      onBlack: 11.56,
-      onWhite: 1.54,
+      onBlack: 11.71,
+      onWhite: 1.52,
     },
   },
   '300': {
     title: 'Gray 300',
-    hex: '#b3bac0',
+    hex: '#b6bcc3',
     contrast: {
-      onBlack: 9.07,
-      onWhite: 1.96,
+      onBlack: 9.31,
+      onWhite: 1.91,
     },
   },
   '400': {
     title: 'Gray 400',
-    hex: '#9aa3ab',
+    hex: '#9da6af',
     contrast: {
-      onBlack: 6.95,
-      onWhite: 2.56,
+      onBlack: 7.2,
+      onWhite: 2.47,
     },
   },
   '500': {
     title: 'Gray 500',
-    hex: '#818c96',
+    hex: '#85909b',
     contrast: {
-      onBlack: 5.19,
-      onWhite: 3.43,
+      onBlack: 5.47,
+      onWhite: 3.25,
     },
   },
   '600': {
     title: 'Gray 600',
-    hex: '#6a757e',
+    hex: '#6d7883',
     contrast: {
-      onBlack: 3.78,
-      onWhite: 4.71,
+      onBlack: 3.95,
+      onWhite: 4.51,
     },
   },
   '700': {
     title: 'Gray 700',
-    hex: '#545d67',
+    hex: '#56606a',
     contrast: {
-      onBlack: 2.66,
-      onWhite: 6.69,
+      onBlack: 2.78,
+      onWhite: 6.4,
     },
   },
   '800': {
     title: 'Gray 800',
-    hex: '#3d464f',
+    hex: '#3e4851',
     contrast: {
-      onBlack: 1.85,
-      onWhite: 9.63,
+      onBlack: 1.92,
+      onWhite: 9.29,
     },
   },
   '900': {
     title: 'Gray 900',
-    hex: '#262f37',
+    hex: '#273038',
     contrast: {
-      onBlack: 1.31,
-      onWhite: 13.64,
+      onBlack: 1.32,
+      onWhite: 13.46,
     },
   },
   '950': {
     title: 'Gray 950',
-    hex: '#1b232b',
+    hex: '#1b242c',
     contrast: {
-      onBlack: 1.12,
-      onWhite: 15.91,
+      onBlack: 1.14,
+      onWhite: 15.67,
     },
   },
 }
@@ -134,55 +134,55 @@ export const blue: ColorTints = {
   },
   '400': {
     title: 'Blue 400',
-    hex: '#5aa4fc',
+    hex: '#5ca5fc',
     contrast: {
-      onBlack: 6.92,
-      onWhite: 2.57,
+      onBlack: 6.98,
+      onWhite: 2.55,
     },
   },
   '500': {
     title: 'Blue 500',
-    hex: '#3787fc',
+    hex: '#3b8afc',
     contrast: {
-      onBlack: 5.12,
-      onWhite: 3.48,
+      onBlack: 5.27,
+      onWhite: 3.38,
     },
   },
   '600': {
     title: 'Blue 600',
-    hex: '#206ee9',
+    hex: '#2170f0',
     contrast: {
-      onBlack: 3.78,
-      onWhite: 4.71,
+      onBlack: 3.93,
+      onWhite: 4.53,
     },
   },
   '700': {
     title: 'Blue 700',
-    hex: '#1c58b7',
+    hex: '#1c5abc',
     contrast: {
-      onBlack: 2.64,
-      onWhite: 6.73,
+      onBlack: 2.75,
+      onWhite: 6.48,
     },
   },
   '800': {
     title: 'Blue 800',
-    hex: '#184384',
+    hex: '#184488',
     contrast: {
-      onBlack: 1.85,
-      onWhite: 9.63,
+      onBlack: 1.88,
+      onWhite: 9.46,
     },
   },
   '900': {
     title: 'Blue 900',
-    hex: '#142d52',
+    hex: '#142e54',
     contrast: {
-      onBlack: 1.29,
-      onWhite: 13.82,
+      onBlack: 1.31,
+      onWhite: 13.64,
     },
   },
   '950': {
     title: 'Blue 950',
-    hex: '#122239',
+    hex: '#12233a',
     contrast: {
       onBlack: 1.12,
       onWhite: 15.91,
@@ -228,55 +228,55 @@ export const purple: ColorTints = {
   },
   '400': {
     title: 'Purple 400',
-    hex: '#d97afc',
+    hex: '#d97bfc',
     contrast: {
-      onBlack: 6.9,
-      onWhite: 2.58,
+      onBlack: 6.93,
+      onWhite: 2.57,
     },
   },
   '500': {
     title: 'Purple 500',
-    hex: '#cb48fc',
+    hex: '#cc4cfc',
     contrast: {
-      onBlack: 4.98,
-      onWhite: 3.57,
+      onBlack: 5.08,
+      onWhite: 3.5,
     },
   },
   '600': {
     title: 'Purple 600',
-    hex: '#b622ef',
+    hex: '#bb22f5',
     contrast: {
-      onBlack: 3.78,
-      onWhite: 4.71,
+      onBlack: 3.95,
+      onWhite: 4.51,
     },
   },
   '700': {
     title: 'Purple 700',
-    hex: '#8c1fbb',
+    hex: '#901fbf',
     contrast: {
-      onBlack: 2.56,
-      onWhite: 6.95,
+      onBlack: 2.66,
+      onWhite: 6.69,
     },
   },
   '800': {
     title: 'Purple 800',
-    hex: '#631d87',
+    hex: '#651d8a',
     contrast: {
-      onBlack: 1.75,
-      onWhite: 10.19,
+      onBlack: 1.78,
+      onWhite: 10,
     },
   },
   '900': {
     title: 'Purple 900',
-    hex: '#391a53',
+    hex: '#3a1a55',
     contrast: {
-      onBlack: 1.22,
-      onWhite: 14.58,
+      onBlack: 1.24,
+      onWhite: 14.38,
     },
   },
   '950': {
     title: 'Purple 950',
-    hex: '#241939',
+    hex: '#25193a',
     contrast: {
       onBlack: 1.08,
       onWhite: 16.41,
@@ -322,47 +322,47 @@ export const magenta: ColorTints = {
   },
   '400': {
     title: 'Magenta 400',
-    hex: '#fe6cc2',
+    hex: '#ff6cc2',
     contrast: {
-      onBlack: 6.9,
-      onWhite: 2.58,
+      onBlack: 6.93,
+      onWhite: 2.57,
     },
   },
   '500': {
     title: 'Magenta 500',
-    hex: '#ed48a9',
+    hex: '#ff40b0',
     contrast: {
-      onBlack: 5.17,
-      onWhite: 3.44,
+      onBlack: 5.61,
+      onWhite: 3.17,
     },
   },
   '600': {
     title: 'Magenta 600',
-    hex: '#cc348f',
+    hex: '#d03794',
     contrast: {
-      onBlack: 3.78,
-      onWhite: 4.71,
+      onBlack: 3.95,
+      onWhite: 4.51,
     },
   },
   '700': {
     title: 'Magenta 700',
-    hex: '#9d2d73',
+    hex: '#a02f77',
     contrast: {
-      onBlack: 2.59,
-      onWhite: 6.86,
+      onBlack: 2.68,
+      onWhite: 6.65,
     },
   },
   '800': {
     title: 'Magenta 800',
-    hex: '#6e2657',
+    hex: '#70275a',
     contrast: {
-      onBlack: 1.76,
-      onWhite: 10.1,
+      onBlack: 1.8,
+      onWhite: 9.91,
     },
   },
   '900': {
     title: 'Magenta 900',
-    hex: '#3f1f3b',
+    hex: '#401f3d',
     contrast: {
       onBlack: 1.25,
       onWhite: 14.19,
@@ -370,7 +370,7 @@ export const magenta: ColorTints = {
   },
   '950': {
     title: 'Magenta 950',
-    hex: '#271b2d',
+    hex: '#281b2e',
     contrast: {
       onBlack: 1.08,
       onWhite: 16.41,
@@ -384,79 +384,79 @@ export const magenta: ColorTints = {
 export const red: ColorTints = {
   '50': {
     title: 'Red 50',
-    hex: '#fdeff0',
+    hex: '#ffedee',
     contrast: {
-      onBlack: 15.92,
-      onWhite: 1.12,
+      onBlack: 15.76,
+      onWhite: 1.13,
     },
   },
   '100': {
     title: 'Red 100',
-    hex: '#fce0e1',
+    hex: '#ffdbdd',
     contrast: {
-      onBlack: 14.31,
-      onWhite: 1.24,
+      onBlack: 13.92,
+      onWhite: 1.28,
     },
   },
   '200': {
     title: 'Red 200',
-    hex: '#fac1c4',
+    hex: '#ffb8bb',
     contrast: {
-      onBlack: 11.42,
-      onWhite: 1.56,
+      onBlack: 10.86,
+      onWhite: 1.64,
     },
   },
   '300': {
     title: 'Red 300',
-    hex: '#f7a2a6',
+    hex: '#ff959a',
     contrast: {
-      onBlack: 9.05,
-      onWhite: 1.97,
+      onBlack: 8.49,
+      onWhite: 2.1,
     },
   },
   '400': {
     title: 'Red 400',
-    hex: '#f47e81',
+    hex: '#ff6e6b',
     contrast: {
-      onBlack: 6.9,
-      onWhite: 2.58,
+      onBlack: 6.53,
+      onWhite: 2.73,
     },
   },
   '500': {
     title: 'Red 500',
-    hex: '#f15248',
+    hex: '#ff473c',
     contrast: {
-      onBlack: 5.12,
-      onWhite: 3.48,
+      onBlack: 5.27,
+      onWhite: 3.38,
     },
   },
   '600': {
     title: 'Red 600',
-    hex: '#d5392d',
+    hex: '#db3a2d',
     contrast: {
-      onBlack: 3.78,
-      onWhite: 4.71,
+      onBlack: 3.95,
+      onWhite: 4.51,
     },
   },
   '700': {
     title: 'Red 700',
-    hex: '#a43129',
+    hex: '#a8312a',
     contrast: {
-      onBlack: 2.58,
-      onWhite: 6.91,
+      onBlack: 2.66,
+      onWhite: 6.69,
     },
   },
   '800': {
     title: 'Red 800',
-    hex: '#722826',
+    hex: '#752926',
     contrast: {
-      onBlack: 1.73,
-      onWhite: 10.29,
+      onBlack: 1.78,
+      onWhite: 10,
     },
   },
   '900': {
     title: 'Red 900',
-    hex: '#412023',
+    hex: '#422023',
     contrast: {
       onBlack: 1.24,
       onWhite: 14.38,
@@ -464,7 +464,7 @@ export const red: ColorTints = {
   },
   '950': {
     title: 'Red 950',
-    hex: '#281c21',
+    hex: '#291c21',
     contrast: {
       onBlack: 1.08,
       onWhite: 16.41,
@@ -518,47 +518,47 @@ export const orange: ColorTints = {
   },
   '500': {
     title: 'Orange 500',
-    hex: '#dc6a19',
+    hex: '#ea6101',
     contrast: {
-      onBlack: 5.19,
-      onWhite: 3.43,
+      onBlack: 5.25,
+      onWhite: 3.39,
     },
   },
   '600': {
     title: 'Orange 600',
-    hex: '#bb560e',
+    hex: '#c2570b',
     contrast: {
-      onBlack: 3.78,
-      onWhite: 4.71,
+      onBlack: 3.95,
+      onWhite: 4.51,
     },
   },
   '700': {
     title: 'Orange 700',
-    hex: '#914612',
+    hex: '#964811',
     contrast: {
-      onBlack: 2.61,
-      onWhite: 6.82,
+      onBlack: 2.75,
+      onWhite: 6.48,
     },
   },
   '800': {
     title: 'Orange 800',
-    hex: '#663616',
+    hex: '#693816',
     contrast: {
-      onBlack: 1.78,
-      onWhite: 10,
+      onBlack: 1.85,
+      onWhite: 9.63,
     },
   },
   '900': {
     title: 'Orange 900',
-    hex: '#3b271b',
+    hex: '#3c281b',
     contrast: {
-      onBlack: 1.27,
-      onWhite: 14,
+      onBlack: 1.29,
+      onWhite: 13.82,
     },
   },
   '950': {
     title: 'Orange 950',
-    hex: '#251f1d',
+    hex: '#26201d',
     contrast: {
       onBlack: 1.1,
       onWhite: 16.15,
@@ -572,79 +572,79 @@ export const orange: ColorTints = {
 export const yellow: ColorTints = {
   '50': {
     title: 'Yellow 50',
-    hex: '#fff1bb',
+    hex: '#f8f2d6',
     contrast: {
-      onBlack: 15.73,
+      onBlack: 15.81,
       onWhite: 1.13,
     },
   },
   '100': {
     title: 'Yellow 100',
-    hex: '#ffe478',
+    hex: '#f2e5ae',
     contrast: {
-      onBlack: 14.08,
-      onWhite: 1.26,
+      onBlack: 14.07,
+      onWhite: 1.27,
     },
   },
   '200': {
     title: 'Yellow 200',
-    hex: '#fcc900',
+    hex: '#e6cb5e',
     contrast: {
-      onBlack: 11.44,
-      onWhite: 1.56,
+      onBlack: 11.07,
+      onWhite: 1.61,
     },
   },
   '300': {
     title: 'Yellow 300',
-    hex: '#e5b100',
+    hex: '#d9b136',
     contrast: {
-      onBlack: 9,
-      onWhite: 1.98,
+      onBlack: 8.73,
+      onWhite: 2.04,
     },
   },
   '400': {
     title: 'Yellow 400',
-    hex: '#ce9900',
+    hex: '#cc9815',
     contrast: {
-      onBlack: 6.93,
-      onWhite: 2.57,
+      onBlack: 6.83,
+      onWhite: 2.61,
     },
   },
   '500': {
     title: 'Yellow 500',
-    hex: '#b78100',
+    hex: '#bb8100',
     contrast: {
-      onBlack: 5.22,
-      onWhite: 3.41,
+      onBlack: 5.31,
+      onWhite: 3.35,
     },
   },
   '600': {
     title: 'Yellow 600',
-    hex: '#9e6900',
+    hex: '#a26b00',
     contrast: {
-      onBlack: 3.8,
-      onWhite: 4.69,
+      onBlack: 3.93,
+      onWhite: 4.53,
     },
   },
   '700': {
     title: 'Yellow 700',
-    hex: '#7b5408',
+    hex: '#7e5607',
     contrast: {
-      onBlack: 2.64,
-      onWhite: 6.73,
+      onBlack: 2.73,
+      onWhite: 6.52,
     },
   },
   '800': {
     title: 'Yellow 800',
-    hex: '#574010',
+    hex: '#59410f',
     contrast: {
-      onBlack: 1.81,
-      onWhite: 9.81,
+      onBlack: 1.85,
+      onWhite: 9.63,
     },
   },
   '900': {
     title: 'Yellow 900',
-    hex: '#332c18',
+    hex: '#342c17',
     contrast: {
       onBlack: 1.29,
       onWhite: 13.82,
@@ -652,7 +652,7 @@ export const yellow: ColorTints = {
   },
   '950': {
     title: 'Yellow 950',
-    hex: '#21221c',
+    hex: '#22221b',
     contrast: {
       onBlack: 1.12,
       onWhite: 15.91,
@@ -666,87 +666,87 @@ export const yellow: ColorTints = {
 export const green: ColorTints = {
   '50': {
     title: 'Green 50',
-    hex: '#def7e6',
+    hex: '#e0f7e9',
     contrast: {
-      onBlack: 15.73,
+      onBlack: 15.81,
       onWhite: 1.13,
     },
   },
   '100': {
     title: 'Green 100',
-    hex: '#bdf0ce',
+    hex: '#c2efd4',
     contrast: {
-      onBlack: 14,
+      onBlack: 14.07,
       onWhite: 1.27,
     },
   },
   '200': {
     title: 'Green 200',
-    hex: '#7be29e',
+    hex: '#85e0a9',
     contrast: {
-      onBlack: 11.2,
+      onBlack: 11.22,
       onWhite: 1.59,
     },
   },
   '300': {
     title: 'Green 300',
-    hex: '#40d273',
+    hex: '#48d07f',
     contrast: {
-      onBlack: 9.05,
-      onWhite: 1.97,
+      onBlack: 8.98,
+      onWhite: 1.98,
     },
   },
   '400': {
     title: 'Green 400',
-    hex: '#2cb864',
+    hex: '#30b871',
     contrast: {
-      onBlack: 6.9,
-      onWhite: 2.58,
+      onBlack: 6.97,
+      onWhite: 2.55,
     },
   },
   '500': {
     title: 'Green 500',
-    hex: '#189f56',
+    hex: '#1aa064',
     contrast: {
-      onBlack: 5.2,
-      onWhite: 3.42,
+      onBlack: 5.31,
+      onWhite: 3.35,
     },
   },
   '600': {
     title: 'Green 600',
-    hex: '#068548',
+    hex: '#058858',
     contrast: {
-      onBlack: 3.78,
-      onWhite: 4.71,
+      onBlack: 3.95,
+      onWhite: 4.51,
     },
   },
   '700': {
     title: 'Green 700',
-    hex: '#08693e',
+    hex: '#076c4a',
     contrast: {
-      onBlack: 2.63,
-      onWhite: 6.77,
+      onBlack: 2.76,
+      onWhite: 6.44,
     },
   },
   '800': {
     title: 'Green 800',
-    hex: '#0b4e34',
+    hex: '#0a503c',
     contrast: {
-      onBlack: 1.83,
-      onWhite: 9.72,
+      onBlack: 1.88,
+      onWhite: 9.46,
     },
   },
   '900': {
     title: 'Green 900',
-    hex: '#0d332a',
+    hex: '#0d342e',
     contrast: {
-      onBlack: 1.29,
-      onWhite: 13.82,
+      onBlack: 1.31,
+      onWhite: 13.64,
     },
   },
   '950': {
     title: 'Green 950',
-    hex: '#0e2525',
+    hex: '#0e2627',
     contrast: {
       onBlack: 1.12,
       onWhite: 15.91,
@@ -760,7 +760,7 @@ export const green: ColorTints = {
 export const cyan: ColorTints = {
   '50': {
     title: 'Cyan 50',
-    hex: '#d0f7fc',
+    hex: '#d6f6f8',
     contrast: {
       onBlack: 15.59,
       onWhite: 1.14,
@@ -768,79 +768,79 @@ export const cyan: ColorTints = {
   },
   '100': {
     title: 'Cyan 100',
-    hex: '#a2effa',
+    hex: '#aeedf1',
     contrast: {
-      onBlack: 13.78,
-      onWhite: 1.29,
+      onBlack: 13.71,
+      onWhite: 1.3,
     },
   },
   '200': {
     title: 'Cyan 200',
-    hex: '#46e0f5',
+    hex: '#5ddce4',
     contrast: {
-      onBlack: 11.22,
-      onWhite: 1.59,
+      onBlack: 10.86,
+      onWhite: 1.64,
     },
   },
   '300': {
     title: 'Cyan 300',
-    hex: '#1dcae3',
+    hex: '#0ccbd7',
     contrast: {
-      onBlack: 8.98,
-      onWhite: 1.98,
+      onBlack: 8.93,
+      onWhite: 1.99,
     },
   },
   '400': {
     title: 'Cyan 400',
-    hex: '#15b1c8',
+    hex: '#04b3c5',
     contrast: {
-      onBlack: 6.92,
-      onWhite: 2.57,
+      onBlack: 7,
+      onWhite: 2.54,
     },
   },
   '500': {
     title: 'Cyan 500',
-    hex: '#0d98ac',
+    hex: '#009bb2',
     contrast: {
-      onBlack: 5.17,
-      onWhite: 3.44,
+      onBlack: 5.37,
+      onWhite: 3.31,
     },
   },
   '600': {
     title: 'Cyan 600',
-    hex: '#077f91',
+    hex: '#00819c',
     contrast: {
-      onBlack: 3.78,
-      onWhite: 4.71,
+      onBlack: 3.92,
+      onWhite: 4.55,
     },
   },
   '700': {
     title: 'Cyan 700',
-    hex: '#096574',
+    hex: '#04677d',
     contrast: {
-      onBlack: 2.64,
-      onWhite: 6.73,
+      onBlack: 2.75,
+      onWhite: 6.48,
     },
   },
   '800': {
     title: 'Cyan 800',
-    hex: '#0b4b58',
+    hex: '#084c5e',
     contrast: {
-      onBlack: 1.83,
-      onWhite: 9.72,
+      onBlack: 1.86,
+      onWhite: 9.55,
     },
   },
   '900': {
     title: 'Cyan 900',
-    hex: '#0d313c',
+    hex: '#0c323f',
     contrast: {
-      onBlack: 1.29,
-      onWhite: 13.82,
+      onBlack: 1.31,
+      onWhite: 13.64,
     },
   },
   '950': {
     title: 'Cyan 950',
-    hex: '#0e242e',
+    hex: '#0e252f',
     contrast: {
       onBlack: 1.12,
       onWhite: 15.91,

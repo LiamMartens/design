@@ -54,17 +54,16 @@ export function selectableColorStyle(
       }
 
       &:not(:disabled) {
-        &[aria-pressed='true'] {
+        &[data-pressed] {
           ${_colorVarsStyle(base, tone.pressed)}
         }
 
-        &[data-selected],
-        &[aria-selected='true'] > & {
+        &[data-selected] {
           ${_colorVarsStyle(base, tone.selected)}
         }
 
         @media (hover: hover) {
-          &:not([data-selected]) {
+          &:not([data-pressed]):not([data-selected]) {
             &:hover {
               ${_colorVarsStyle(base, tone.hovered)}
             }

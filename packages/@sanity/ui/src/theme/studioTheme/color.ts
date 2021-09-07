@@ -16,41 +16,23 @@ const NEUTRAL_TONES = ['default', 'transparent']
 
 export const color = createColorTheme({
   base: ({dark, name}) => {
+    const mix = dark ? screen : multiply
+
     if (name === 'default') {
-      const skeletonFrom = dark ? hues.gray[900].hex : hues.gray[100].hex
+      const tints = tones.default
+      const bg = dark ? hues.gray[950].hex : white.hex
+      const skeletonFrom = mix(bg, tints[dark ? 900 : 100].hex)
 
       return {
         fg: dark ? white.hex : black.hex,
-        bg: dark ? hues.gray[950].hex : white.hex,
-        border: hues.gray[dark ? 800 : 200].hex,
+        bg,
+        border: mix(bg, tints[dark ? 800 : 200].hex),
         focusRing: hues.blue[dark ? 500 : 500].hex,
         shadow: {
-          outline: rgba(hues.gray[500].hex, 0.4),
-          umbra: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.4 : 0.2),
-          penumbra: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.28 : 0.14),
-          ambient: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.24 : 0.12),
-        },
-        skeleton: {
-          from: skeletonFrom,
-          to: rgba(skeletonFrom, 0.5),
-        },
-      }
-    }
-
-    if (name === 'transparent') {
-      const tints = tones.default
-      const skeletonFrom = tints[dark ? 800 : 200].hex
-
-      return {
-        fg: tints[dark ? 100 : 900].hex,
-        bg: tints[dark ? 900 : 50].hex,
-        border: tints[dark ? 800 : 300].hex,
-        focusRing: hues.blue[500].hex,
-        shadow: {
-          outline: rgba(tints[500].hex, dark ? 0.2 : 0.4),
-          umbra: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.4 : 0.2),
-          penumbra: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.28 : 0.14),
-          ambient: rgba(dark ? black.hex : hues.gray[500].hex, dark ? 0.24 : 0.12),
+          outline: rgba(tints[500].hex, 0.4),
+          umbra: rgba(dark ? black.hex : tints[500].hex, dark ? 0.4 : 0.2),
+          penumbra: rgba(dark ? black.hex : tints[500].hex, dark ? 0.28 : 0.14),
+          ambient: rgba(dark ? black.hex : tints[500].hex, dark ? 0.24 : 0.12),
         },
         skeleton: {
           from: skeletonFrom,
@@ -60,15 +42,16 @@ export const color = createColorTheme({
     }
 
     const tints = tones[name] || tones.default
-    const skeletonFrom = tints[dark ? 800 : 200].hex
+    const bg = tints[dark ? 900 : 50].hex
+    const skeletonFrom = mix(bg, tints[dark ? 900 : 100].hex)
 
     return {
       fg: tints[dark ? 100 : 900].hex,
-      bg: tints[dark ? 950 : 50].hex,
-      border: tints[dark ? 800 : 200].hex,
+      bg,
+      border: mix(bg, tints[dark ? 800 : 200].hex),
       focusRing: tints[500].hex,
       shadow: {
-        outline: rgba(tints[500].hex, dark ? 0.2 : 0.4),
+        outline: rgba(tints[500].hex, 0.4),
         umbra: rgba(dark ? black.hex : tints[500].hex, dark ? 0.4 : 0.2),
         penumbra: rgba(dark ? black.hex : tints[500].hex, dark ? 0.28 : 0.14),
         ambient: rgba(dark ? black.hex : tints[500].hex, dark ? 0.24 : 0.12),
@@ -120,13 +103,13 @@ export const color = createColorTheme({
     }
 
     if (state === 'hovered') {
-      const bg = mix(base.bg, tints[dark ? 300 : 600].hex)
+      const bg = mix(base.bg, tints[dark ? 200 : 700].hex)
       const skeletonFrom = mix2(bg, tints[dark ? 200 : 800].hex)
 
       return {
         bg,
         bg2: mix2(bg, tints[dark ? 50 : 950].hex),
-        border: mix(base.bg, tints[dark ? 300 : 600].hex),
+        border: mix(base.bg, tints[dark ? 200 : 700].hex),
         fg: mix(base.bg, dark ? black.hex : white.hex),
         muted: {
           fg: mix(base.bg, tints[dark ? 800 : 200].hex),
@@ -153,7 +136,7 @@ export const color = createColorTheme({
       const skeletonFrom = mix2(bg, tints[dark ? 200 : 800].hex)
 
       return {
-        bg: mix(base.bg, tints[dark ? 200 : 800].hex),
+        bg: mix(base.bg, tints[dark ? 100 : 800].hex),
         bg2: mix2(bg, tints[dark ? 50 : 950].hex),
         border: mix(base.bg, tints[dark ? 200 : 800].hex),
         fg: mix(base.bg, dark ? black.hex : white.hex),
@@ -211,13 +194,13 @@ export const color = createColorTheme({
     }
 
     // state: "enabled" | unknown
-    const bg = mix(base.bg, tints[dark ? 400 : 500].hex)
+    const bg = mix(base.bg, tints[dark ? 300 : 600].hex)
     const skeletonFrom = mix2(bg, tints[dark ? 200 : 800].hex)
 
     return {
       bg,
       bg2: mix2(bg, tints[dark ? 50 : 950].hex),
-      border: mix(base.bg, tints[dark ? 400 : 500].hex),
+      border: bg,
       fg: mix(base.bg, dark ? black.hex : white.hex),
       muted: {
         fg: mix(base.bg, tints[dark ? 900 : 100].hex),
@@ -288,20 +271,20 @@ export const color = createColorTheme({
       return {
         bg,
         bg2: mix(bg, tints[dark ? 950 : 50].hex),
-        border: mix(bg, tints[dark ? 900 : 100].hex),
-        fg: mix(base.bg, tints[dark ? 200 : 800].hex),
+        border: mix(bg, tints[dark ? 800 : 200].hex),
+        fg: mix(bg, tints[dark ? 300 : 700].hex),
         muted: {
-          fg: mix(base.bg, tints[dark ? 400 : 600].hex),
+          fg: mix(bg, hues.gray[dark ? 400 : 600].hex),
         },
         accent: {
-          fg: mix(base.bg, hues.red[dark ? 400 : 500].hex),
+          fg: mix(bg, hues.red[dark ? 400 : 500].hex),
         },
         link: {
-          fg: mix(base.bg, hues.blue[dark ? 400 : 600].hex),
+          fg: mix(bg, hues.blue[dark ? 400 : 600].hex),
         },
         code: {
           bg: mix(bg, tints[dark ? 950 : 50].hex),
-          fg: mix(base.bg, tints[dark ? 400 : 600].hex),
+          fg: mix(bg, tints[dark ? 400 : 600].hex),
         },
         skeleton: {
           from: skeletonFrom,
@@ -316,15 +299,15 @@ export const color = createColorTheme({
       }
 
       const bg = mix(base.bg, tints[dark ? 900 : 100].hex)
-      const skeletonFrom = mix(bg, tints[dark ? 900 : 100].hex)
+      const skeletonFrom = mix(bg, tints[dark ? 800 : 200].hex)
 
       return {
         bg,
         bg2: mix(bg, tints[dark ? 950 : 50].hex),
-        border: mix(bg, tints[dark ? 900 : 100].hex),
-        fg: mix(base.bg, tints[dark ? 200 : 800].hex),
+        border: mix(bg, tints[dark ? 900 : 200].hex),
+        fg: mix(base.bg, tints[dark ? 300 : 700].hex),
         muted: {
-          fg: mix(base.bg, tints[dark ? 400 : 600].hex),
+          fg: mix(base.bg, hues.gray[dark ? 400 : 600].hex),
         },
         accent: {
           fg: mix(bg, hues.red[dark ? 400 : 500].hex),
@@ -354,7 +337,7 @@ export const color = createColorTheme({
       return {
         bg,
         bg2: mix(bg, tints[dark ? 950 : 50].hex),
-        border: mix(bg, tints[dark ? 900 : 100].hex),
+        border: mix(bg, tints[dark ? 800 : 200].hex),
         fg: mix(base.bg, tints[dark ? 200 : 800].hex),
         muted: {
           fg: mix(base.bg, tints[dark ? 400 : 600].hex),
@@ -376,26 +359,26 @@ export const color = createColorTheme({
       }
     }
 
-    const bg = base.bg
+    const {bg, border} = base
     const skeletonFrom = mix(bg, tints[dark ? 900 : 100].hex)
 
     return {
       bg,
       bg2: mix(bg, tints[dark ? 950 : 50].hex),
-      border: mix(bg, tints[dark ? 900 : 100].hex),
-      fg: mix(base.bg, tints[dark ? 300 : 700].hex),
+      border, // mix(bg, tints[dark ? 800 : 200].hex),
+      fg: mix(bg, tints[dark ? 400 : 600].hex),
       muted: {
-        fg: mix(base.bg, tints[dark ? 400 : 600].hex),
+        fg: mix(bg, hues.gray[dark ? 400 : 600].hex),
       },
       accent: {
-        fg: mix(base.bg, hues.red[dark ? 400 : 500].hex),
+        fg: mix(bg, hues.red[dark ? 400 : 500].hex),
       },
       link: {
-        fg: mix(base.bg, hues.blue[dark ? 400 : 600].hex),
+        fg: mix(bg, hues.blue[dark ? 400 : 600].hex),
       },
       code: {
-        bg: mix(base.bg, tints[dark ? 950 : 50].hex),
-        fg: mix(base.bg, tints[dark ? 400 : 600].hex),
+        bg: mix(bg, tints[dark ? 950 : 50].hex),
+        fg: mix(bg, tints[dark ? 400 : 600].hex),
       },
       skeleton: {
         from: skeletonFrom,
@@ -445,6 +428,8 @@ export const color = createColorTheme({
   },
 
   card: ({base, dark, muted, name, solid, state}) => {
+    const {bg, fg, border} = base
+
     if (state === 'hovered') {
       return muted[name].hovered
     }
@@ -473,25 +458,24 @@ export const color = createColorTheme({
       return solid[name].enabled
     }
 
-    const bg = base.bg
-    const skeletonFrom = mix(base.bg, tints[dark ? 900 : 100].hex)
+    const skeletonFrom = mix(bg, tints[dark ? 900 : 100].hex)
 
     return {
       bg,
       bg2: mix(bg, tints[dark ? 950 : 50].hex),
-      fg: base.fg,
-      border: base.border,
+      fg,
+      border,
       muted: {
-        fg: mix(base.bg, tints[dark ? 400 : 600].hex),
+        fg: mix(bg, hues.gray[dark ? 400 : 600].hex),
       },
       accent: {
-        fg: mix(base.bg, hues.red[dark ? 400 : 500].hex),
+        fg: mix(bg, hues.red[dark ? 400 : 500].hex),
       },
       link: {
-        fg: mix(base.bg, hues.blue[dark ? 400 : 600].hex),
+        fg: mix(bg, hues.blue[dark ? 400 : 600].hex),
       },
       code: {
-        bg: mix(base.bg, tints[dark ? 950 : 50].hex),
+        bg: mix(bg, tints[dark ? 950 : 50].hex),
         fg: tints[dark ? 200 : 700].hex,
       },
       skeleton: {
@@ -503,59 +487,59 @@ export const color = createColorTheme({
 
   input: ({base, dark, mode, state}) => {
     const mix = dark ? screen : multiply
+    const {bg, fg, border} = base
 
     if (mode === 'invalid') {
       const tints = tones.critical
 
       return {
-        bg: mix(base.bg, tints[dark ? 950 : 50].hex),
-        fg: mix(base.bg, tints[dark ? 400 : 600].hex),
-        border: mix(base.bg, tints[dark ? 800 : 200].hex),
-        placeholder: mix(base.bg, tints[dark ? 600 : 400].hex),
+        bg: mix(bg, tints[dark ? 950 : 50].hex),
+        fg: mix(bg, tints[dark ? 400 : 600].hex),
+        border: mix(bg, tints[dark ? 800 : 200].hex),
+        placeholder: mix(bg, tints[dark ? 600 : 400].hex),
       }
     }
 
     if (state === 'hovered') {
       return {
-        bg: base.bg,
-        fg: base.fg,
-        border: mix(base.bg, hues.gray[dark ? 700 : 300].hex),
-        placeholder: mix(base.bg, hues.gray[dark ? 600 : 400].hex),
+        bg,
+        fg,
+        border: mix(bg, hues.gray[dark ? 700 : 300].hex),
+        placeholder: mix(bg, hues.gray[dark ? 600 : 400].hex),
       }
     }
 
     if (state === 'disabled') {
       return {
-        bg: mix(base.bg, hues.gray[dark ? 950 : 50].hex),
-        fg: mix(base.bg, hues.gray[dark ? 700 : 300].hex),
-        border: mix(base.bg, hues.gray[dark ? 900 : 100].hex),
-        placeholder: mix(base.bg, hues.gray[dark ? 800 : 200].hex),
+        bg: mix(bg, hues.gray[dark ? 950 : 50].hex),
+        fg: mix(bg, hues.gray[dark ? 700 : 300].hex),
+        border: mix(bg, hues.gray[dark ? 900 : 100].hex),
+        placeholder: mix(bg, hues.gray[dark ? 800 : 200].hex),
       }
     }
 
     if (state === 'readOnly') {
       return {
-        bg: mix(base.bg, hues.gray[dark ? 950 : 50].hex),
-        fg: mix(base.bg, hues.gray[dark ? 200 : 800].hex),
-        border: mix(base.bg, hues.gray[dark ? 800 : 200].hex),
-        placeholder: mix(base.bg, hues.gray[dark ? 600 : 400].hex),
+        bg: mix(bg, hues.gray[dark ? 950 : 50].hex),
+        fg: mix(bg, hues.gray[dark ? 200 : 800].hex),
+        border: mix(bg, hues.gray[dark ? 800 : 200].hex),
+        placeholder: mix(bg, hues.gray[dark ? 600 : 400].hex),
       }
     }
 
     return {
-      bg: base.bg,
-      fg: base.fg,
-      border: base.border,
-      placeholder: mix(base.bg, hues.gray[dark ? 600 : 400].hex),
+      bg,
+      fg,
+      border,
+      placeholder: mix(bg, hues.gray[dark ? 600 : 400].hex),
     }
   },
 
   selectable: ({base, muted, tone, solid, state}) => {
+    const {bg} = base
+
     if (state === 'enabled') {
-      return {
-        ...muted[tone].enabled,
-        bg: base.bg,
-      }
+      return {...muted[tone].enabled, bg}
     }
 
     if (state === 'pressed') {
@@ -575,10 +559,7 @@ export const color = createColorTheme({
     }
 
     if (state === 'disabled') {
-      return {
-        ...muted[tone].disabled,
-        bg: base.bg,
-      }
+      return {...muted[tone].disabled, bg}
     }
 
     return muted[tone][state]
@@ -586,52 +567,54 @@ export const color = createColorTheme({
 
   spot: ({base, dark, key}) => {
     const mix = dark ? screen : multiply
+    const {bg} = base
 
-    return mix(base.bg, hues[key][dark ? 400 : 500].hex)
+    return mix(bg, hues[key][dark ? 400 : 500].hex)
   },
 
   syntax: ({base, dark}) => {
     const mix = dark ? screen : multiply
+    const {bg} = base
     const mainShade = dark ? 300 : 600
     const secondaryShade = dark ? 500 : 400
 
     return {
-      atrule: mix(base.bg, hues.purple[mainShade].hex),
-      attrName: mix(base.bg, hues.green[mainShade].hex),
-      attrValue: mix(base.bg, hues.yellow[mainShade].hex),
-      attribute: mix(base.bg, hues.yellow[mainShade].hex),
-      boolean: mix(base.bg, hues.purple[mainShade].hex),
-      builtin: mix(base.bg, hues.purple[mainShade].hex),
-      cdata: mix(base.bg, hues.yellow[mainShade].hex),
-      char: mix(base.bg, hues.yellow[mainShade].hex),
-      class: mix(base.bg, hues.orange[mainShade].hex),
-      className: mix(base.bg, hues.cyan[mainShade].hex),
-      comment: mix(base.bg, hues.gray[secondaryShade].hex),
-      constant: mix(base.bg, hues.purple[mainShade].hex),
-      deleted: mix(base.bg, hues.red[mainShade].hex),
-      doctype: mix(base.bg, hues.gray[secondaryShade].hex),
-      entity: mix(base.bg, hues.red[mainShade].hex),
-      function: mix(base.bg, hues.green[mainShade].hex),
-      hexcode: mix(base.bg, hues.blue[mainShade].hex),
-      id: mix(base.bg, hues.purple[mainShade].hex),
-      important: mix(base.bg, hues.purple[mainShade].hex),
-      inserted: mix(base.bg, hues.yellow[mainShade].hex),
-      keyword: mix(base.bg, hues.magenta[mainShade].hex),
-      number: mix(base.bg, hues.purple[mainShade].hex),
-      operator: mix(base.bg, hues.magenta[mainShade].hex),
-      prolog: mix(base.bg, hues.gray[secondaryShade].hex),
-      property: mix(base.bg, hues.blue[mainShade].hex),
-      pseudoClass: mix(base.bg, hues.yellow[mainShade].hex),
-      pseudoElement: mix(base.bg, hues.yellow[mainShade].hex),
-      punctuation: mix(base.bg, hues.gray[mainShade].hex),
-      regex: mix(base.bg, hues.blue[mainShade].hex),
-      selector: mix(base.bg, hues.red[mainShade].hex),
-      string: mix(base.bg, hues.yellow[mainShade].hex),
-      symbol: mix(base.bg, hues.purple[mainShade].hex),
-      tag: mix(base.bg, hues.red[mainShade].hex),
-      unit: mix(base.bg, hues.orange[mainShade].hex),
-      url: mix(base.bg, hues.red[mainShade].hex),
-      variable: mix(base.bg, hues.red[mainShade].hex),
+      atrule: mix(bg, hues.purple[mainShade].hex),
+      attrName: mix(bg, hues.green[mainShade].hex),
+      attrValue: mix(bg, hues.yellow[mainShade].hex),
+      attribute: mix(bg, hues.yellow[mainShade].hex),
+      boolean: mix(bg, hues.purple[mainShade].hex),
+      builtin: mix(bg, hues.purple[mainShade].hex),
+      cdata: mix(bg, hues.yellow[mainShade].hex),
+      char: mix(bg, hues.yellow[mainShade].hex),
+      class: mix(bg, hues.orange[mainShade].hex),
+      className: mix(bg, hues.cyan[mainShade].hex),
+      comment: mix(bg, hues.gray[secondaryShade].hex),
+      constant: mix(bg, hues.purple[mainShade].hex),
+      deleted: mix(bg, hues.red[mainShade].hex),
+      doctype: mix(bg, hues.gray[secondaryShade].hex),
+      entity: mix(bg, hues.red[mainShade].hex),
+      function: mix(bg, hues.green[mainShade].hex),
+      hexcode: mix(bg, hues.blue[mainShade].hex),
+      id: mix(bg, hues.purple[mainShade].hex),
+      important: mix(bg, hues.purple[mainShade].hex),
+      inserted: mix(bg, hues.yellow[mainShade].hex),
+      keyword: mix(bg, hues.magenta[mainShade].hex),
+      number: mix(bg, hues.purple[mainShade].hex),
+      operator: mix(bg, hues.magenta[mainShade].hex),
+      prolog: mix(bg, hues.gray[secondaryShade].hex),
+      property: mix(bg, hues.blue[mainShade].hex),
+      pseudoClass: mix(bg, hues.yellow[mainShade].hex),
+      pseudoElement: mix(bg, hues.yellow[mainShade].hex),
+      punctuation: mix(bg, hues.gray[mainShade].hex),
+      regex: mix(bg, hues.blue[mainShade].hex),
+      selector: mix(bg, hues.red[mainShade].hex),
+      string: mix(bg, hues.yellow[mainShade].hex),
+      symbol: mix(bg, hues.purple[mainShade].hex),
+      tag: mix(bg, hues.red[mainShade].hex),
+      unit: mix(bg, hues.orange[mainShade].hex),
+      url: mix(bg, hues.red[mainShade].hex),
+      variable: mix(bg, hues.red[mainShade].hex),
     }
   },
 })

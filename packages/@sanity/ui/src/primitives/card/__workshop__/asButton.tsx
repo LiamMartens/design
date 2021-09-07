@@ -69,6 +69,7 @@ export default function AsButtonStory() {
                     __unstable_focusRing
                     as="button"
                     padding={4}
+                    selected
                     style={{textAlign: 'center'}}
                     tone={tone}
                   >
