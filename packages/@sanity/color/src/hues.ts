@@ -8,55 +8,55 @@ import {ColorTints} from './types'
 export const gray: ColorTints = {
   '50': {
     title: 'Gray 50',
-    hex: '#f2f3f5',
+    hex: '#f1f3f4',
     contrast: {
-      onBlack: 16.03,
+      onBlack: 15.98,
       onWhite: 1.11,
     },
   },
   '100': {
     title: 'Gray 100',
-    hex: '#e6e8eb',
+    hex: '#e3e7e9',
     contrast: {
-      onBlack: 14.49,
-      onWhite: 1.23,
+      onBlack: 14.31,
+      onWhite: 1.24,
     },
   },
   '200': {
     title: 'Gray 200',
-    hex: '#ced2d7',
+    hex: '#c8cfd4',
     contrast: {
-      onBlack: 11.71,
-      onWhite: 1.52,
+      onBlack: 11.31,
+      onWhite: 1.57,
     },
   },
   '300': {
     title: 'Gray 300',
-    hex: '#b6bcc3',
+    hex: '#adb7bf',
     contrast: {
-      onBlack: 9.31,
-      onWhite: 1.91,
+      onBlack: 8.73,
+      onWhite: 2.04,
     },
   },
   '400': {
     title: 'Gray 400',
-    hex: '#9da6af',
+    hex: '#93a0aa',
     contrast: {
-      onBlack: 7.2,
-      onWhite: 2.47,
+      onBlack: 6.64,
+      onWhite: 2.68,
     },
   },
   '500': {
     title: 'Gray 500',
-    hex: '#85909b',
+    hex: '#7f8e99',
     contrast: {
-      onBlack: 5.47,
-      onWhite: 3.25,
+      onBlack: 5.29,
+      onWhite: 3.37,
     },
   },
   '600': {
     title: 'Gray 600',
-    hex: '#6d7883',
+    hex: '#687985',
     contrast: {
       onBlack: 3.95,
       onWhite: 4.51,
@@ -64,23 +64,23 @@ export const gray: ColorTints = {
   },
   '700': {
     title: 'Gray 700',
-    hex: '#56606a',
+    hex: '#4e616e',
     contrast: {
-      onBlack: 2.78,
-      onWhite: 6.4,
+      onBlack: 2.76,
+      onWhite: 6.44,
     },
   },
   '800': {
     title: 'Gray 800',
-    hex: '#3e4851',
+    hex: '#384855',
     contrast: {
-      onBlack: 1.92,
-      onWhite: 9.29,
+      onBlack: 1.88,
+      onWhite: 9.46,
     },
   },
   '900': {
     title: 'Gray 900',
-    hex: '#273038',
+    hex: '#24303a',
     contrast: {
       onBlack: 1.32,
       onWhite: 13.46,
@@ -88,7 +88,7 @@ export const gray: ColorTints = {
   },
   '950': {
     title: 'Gray 950',
-    hex: '#1b242c',
+    hex: '#1a242d',
     contrast: {
       onBlack: 1.14,
       onWhite: 15.67,

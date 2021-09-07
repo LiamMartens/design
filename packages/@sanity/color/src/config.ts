@@ -38,7 +38,9 @@ export const config: ColorConfig = {
           }
         : {
             0: white,
-            523: '#808B97',
+            380: '#98A4AE', // Pantone 7543 C
+            546: '#768692', // Pantone 7544 C
+            750: '#425563', // Pantone 7545 C
             1000: black,
           },
     },
