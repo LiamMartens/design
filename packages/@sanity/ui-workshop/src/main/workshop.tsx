@@ -1,4 +1,12 @@
-import {BoundaryElementProvider, Flex, PortalProvider, ToastProvider} from '@sanity/ui'
+import {
+  BoundaryElementProvider,
+  Card,
+  Flex,
+  LayerProvider,
+  PortalProvider,
+  ToastProvider,
+  useMediaIndex,
+} from '@sanity/ui'
 import {AxeResults} from 'axe-core'
 import React, {useCallback, useEffect, useMemo, useReducer, useState} from 'react'
 import {WORKSHOP_DEFAULT_FEATURES} from '../constants'
@@ -10,12 +18,12 @@ import {
   WorkshopLocation,
   WorkshopScope,
 } from '../types'
+import {Inspector, InspectorDrawer} from './inspector'
+import {Navbar} from './navbar/navbar'
+import {Navigator, NavigatorDrawer} from './navigator'
+import {StoryCanvas} from './storyCanvas'
 import {useFrame} from './useFrame'
-import {WorkshopNavbar} from './workshopNavbar'
 import {WorkshopProvider} from './workshopProvider'
-import {WorkshopStoryCanvas} from './workshopStoryCanvas'
-import {WorkshopStoryInspector} from './workshopStoryInspector'
-import {WorkshopStoryNav} from './workshopStoryNav'
 
 export interface WorkshopProps {
   collections?: WorkshopCollection[]
@@ -51,6 +59,7 @@ export function Workshop(_props: WorkshopProps): React.ReactElement {
     title,
   } = _props
   const features = useMemo(() => ({...WORKSHOP_DEFAULT_FEATURES, ...featuresProp}), [featuresProp])
+  const mediaIndex = useMediaIndex()
   const {postMessage, ready, ref: frameRef, subscribe} = useFrame()
   const [props, dispatch] = useReducer(propsReducer, [])
   const [axeResults, setAxeResults] = useState<AxeResults | null>(null)
@@ -59,6 +68,21 @@ export function Workshop(_props: WorkshopProps): React.ReactElement {
   const [boundaryElement, setBoundaryElement] = useState<HTMLDivElement | null>(null)
   const [portalElement, setPortalElement] = useState<HTMLDivElement | null>(null)
   const scopes = useMemo(() => scopesProp.sort(_sortScopes), [scopesProp])
+  const [navigatorDrawerOpen, setNavigatorDrawerOpen] = useState(false)
+  const [inspectorDrawerOpen, setInspectorDrawerOpen] = useState(false)
+
+  const openNavigatorDrawer = useCallback(() => setNavigatorDrawerOpen(true), [])
+  const closeNavigatorDrawer = useCallback(() => setNavigatorDrawerOpen(false), [])
+
+  const openInspectorDrawer = useCallback(() => setInspectorDrawerOpen(true), [])
+  const closeInspectorDrawer = useCallback(() => setInspectorDrawerOpen(false), [])
+
+  useEffect(() => {
+    if (mediaIndex >= 2) {
+      setNavigatorDrawerOpen(false)
+      setInspectorDrawerOpen(false)
+    }
+  }, [mediaIndex])
 
   const registerProp = useCallback((PropSchema: PropSchema) => {
     dispatch({type: 'registerProp', PropSchema})
@@ -121,44 +145,66 @@ export function Workshop(_props: WorkshopProps): React.ReactElement {
     <ToastProvider>
       <BoundaryElementProvider element={boundaryElement}>
         <PortalProvider element={portalElement}>
-          <WorkshopProvider
-            features={features}
-            frameUrl={frameUrl}
-            location={location}
-            onLocationPush={onLocationPush}
-            onLocationReplace={onLocationReplace}
-            scopes={scopes}
-            props={props}
-            registerProp={registerProp}
-            setPropValue={setPropValue}
-            title={title}
-            unregisterProp={unregisterProp}
-          >
-            <Flex direction="column" height="fill" ref={setBoundaryElement}>
-              {features.navbar && (
-                <WorkshopNavbar
-                  scheme={scheme}
-                  setScheme={setScheme}
-                  setViewport={setViewport}
-                  setZoom={setZoom}
-                  viewport={viewport}
-                  zoom={zoom}
-                />
-              )}
-              <Flex flex={1}>
-                <WorkshopStoryNav collections={collections} />
-                <WorkshopStoryCanvas
-                  frameRef={frameRef}
-                  ready={ready}
-                  scheme={scheme}
-                  viewport={viewport}
-                  zoom={zoom}
-                />
-                <WorkshopStoryInspector axeResults={axeResults} />
+          <LayerProvider>
+            <WorkshopProvider
+              axeResults={axeResults}
+              closeInspectorDrawer={closeInspectorDrawer}
+              closeNavigatorDrawer={closeNavigatorDrawer}
+              collections={collections}
+              features={features}
+              frameUrl={frameUrl}
+              inspectorDrawer={inspectorDrawerOpen}
+              location={location}
+              navigatorDrawer={navigatorDrawerOpen}
+              onLocationPush={onLocationPush}
+              onLocationReplace={onLocationReplace}
+              openInspectorDrawer={openInspectorDrawer}
+              openNavigatorDrawer={openNavigatorDrawer}
+              props={props}
+              registerProp={registerProp}
+              scheme={scheme}
+              scopes={scopes}
+              setScheme={setScheme}
+              setViewport={setViewport}
+              setZoom={setZoom}
+              setPropValue={setPropValue}
+              title={title}
+              unregisterProp={unregisterProp}
+              viewport={viewport}
+              zoom={zoom}
+            >
+              <Flex direction="column" height="fill" overflow="hidden" ref={setBoundaryElement}>
+                {features.navbar && <Navbar />}
+
+                <Flex flex={1}>
+                  <Card
+                    borderRight
+                    display={['none', 'none', 'block']}
+                    flex={1}
+                    overflow="auto"
+                    style={{minWidth: 180, maxWidth: 300}}
+                  >
+                    <Navigator />
+                  </Card>
+                  <StoryCanvas frameRef={frameRef} ready={ready} />
+                  <Card
+                    borderLeft
+                    display={['none', 'none', 'block']}
+                    flex={1}
+                    overflow="auto"
+                    style={{minWidth: 180, maxWidth: 300}}
+                  >
+                    <Inspector />
+                  </Card>
+                </Flex>
+
+                <div data-portal="" ref={setPortalElement} />
               </Flex>
-            </Flex>
-            <div data-portal="" ref={setPortalElement} />
-          </WorkshopProvider>
+
+              <NavigatorDrawer />
+              <InspectorDrawer />
+            </WorkshopProvider>
+          </LayerProvider>
         </PortalProvider>
       </BoundaryElementProvider>
     </ToastProvider>

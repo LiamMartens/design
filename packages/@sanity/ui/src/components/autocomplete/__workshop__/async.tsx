@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   Code,
+  Container,
   LayerProvider,
   Stack,
   Text,
@@ -79,38 +80,42 @@ export default function AsyncStory() {
   }, [doSearch, optionTitle])
 
   return (
-    <Box padding={[4, 5, 6]}>
-      <Stack space={3}>
-        <Text as="label" htmlFor="async" size={1} weight="semibold">
-          Country
-        </Text>
-        <LayerProvider zOffset={100}>
-          <Autocomplete
-            disabled={loadingCurrentRef}
-            filterOption={filterOption}
-            id="async"
-            loading={loading}
-            onChange={setValue}
-            onQueryChange={handleQueryChange}
-            openButton={{onClick: handleOpenButtonClick}}
-            options={options}
-            placeholder="Search"
-            prefix={
-              <Box padding={1}>
-                <Button disabled={!value} icon={LinkIcon} mode="bleed" padding={2} />
-              </Box>
-            }
-            radius={1}
-            renderOption={renderOption}
-            renderValue={renderValue}
-            value={value}
-          />
-        </LayerProvider>
+    <Box paddingX={[4, 4, 5]} paddingY={[5, 5, 6]}>
+      <Container width={1}>
+        <Stack space={3}>
+          <Text as="label" htmlFor="async" size={1} weight="semibold">
+            Country
+          </Text>
+          <LayerProvider zOffset={100}>
+            <Autocomplete
+              disabled={loadingCurrentRef}
+              filterOption={filterOption}
+              id="async"
+              loading={loading}
+              onChange={setValue}
+              onQueryChange={handleQueryChange}
+              openButton={{onClick: handleOpenButtonClick}}
+              options={options}
+              placeholder="Search"
+              prefix={
+                <Box padding={1}>
+                  <Button disabled={!value} icon={LinkIcon} mode="bleed" padding={2} />
+                </Box>
+              }
+              radius={1}
+              renderOption={renderOption}
+              renderValue={renderValue}
+              value={value}
+            />
+          </LayerProvider>
 
-        <Card border overflow="auto" padding={3} radius={1}>
-          <Code language="json">{JSON.stringify({loading, options, query, value}, null, 2)}</Code>
-        </Card>
-      </Stack>
+          <Card overflow="auto" padding={[3, 3, 4]} radius={1} tone="transparent">
+            <Code language="json" size={[1, 1, 2]}>
+              {JSON.stringify({loading, options, query, value}, null, 2)}
+            </Code>
+          </Card>
+        </Stack>
+      </Container>
     </Box>
   )
 }

@@ -1,30 +1,27 @@
-import {Box, Card, Tree, TreeItem} from '@sanity/ui'
+import {Box, Text, Tree, TreeItem} from '@sanity/ui'
 import React, {useCallback, useMemo} from 'react'
 import {useWorkshop} from '../../useWorkshop'
 import {buildMenu} from './helpers'
-import {MenuCollection, MenuList, MenuScope} from './types'
+import {MenuList, MenuScope} from './types'
 
-export function WorkshopStoryNav(props: {collections?: MenuCollection[]}): React.ReactElement {
-  const {collections = []} = props
-  const {scopes} = useWorkshop()
-  const menu = useMemo(() => buildMenu(collections, scopes), [collections, scopes])
+export function Navigator(): React.ReactElement {
+  const {collections, scopes} = useWorkshop()
+  const menu = useMemo(() => buildMenu(collections || [], scopes), [collections, scopes])
+
+  if (menu.type === 'list') {
+    return (
+      <Box padding={3}>
+        <Tree space={1}>
+          <MenuItems items={menu.items} />
+        </Tree>
+      </Box>
+    )
+  }
 
   return (
-    <Card
-      borderRight
-      display={['none', 'none', 'block']}
-      flex={1}
-      overflow="auto"
-      style={{minWidth: 180, maxWidth: 300}}
-    >
-      {menu.type === 'list' && (
-        <Box padding={3}>
-          <Tree space={1}>
-            <MenuItems items={menu.items} />
-          </Tree>
-        </Box>
-      )}
-    </Card>
+    <Text muted size={1}>
+      No scopes
+    </Text>
   )
 }
 

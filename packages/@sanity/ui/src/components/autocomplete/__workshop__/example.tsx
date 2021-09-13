@@ -27,7 +27,7 @@ export default function ExampleStory() {
   return (
     <Card height="fill" tone={layoutTone}>
       <Container width={1}>
-        <Box padding={[3, 4, 5]}>
+        <Box paddingX={[4, 4, 5]} paddingY={[5, 5, 6]}>
           <Stack space={3}>
             <Text as="label" htmlFor="default" size={1} weight="semibold">
               Country code

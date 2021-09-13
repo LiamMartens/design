@@ -1,3 +1,4 @@
+import {AxeResults} from 'axe-core'
 import React from 'react'
 
 export interface WorkshopFeatures {
@@ -88,12 +89,26 @@ export interface WorkshopLocation {
 }
 
 export interface WorkshopContextValue {
+  axeResults: AxeResults | null
+  closeInspectorDrawer: () => void
+  closeNavigatorDrawer: () => void
+  collections?: WorkshopCollection[]
   frameUrl: string
+  inspectorDrawer: boolean
   location: WorkshopLocation
+  navigatorDrawer: boolean
+  openInspectorDrawer: () => void
+  openNavigatorDrawer: () => void
   pushLocation: (loc: WorkshopLocation) => void
   replaceLocation: (loc: WorkshopLocation) => void
+  scheme: 'light' | 'dark'
   scope: WorkshopScope | null
   scopes: WorkshopScope[]
+  setScheme: (s: 'light' | 'dark') => void
+  setViewport: (v: string) => void
+  setZoom: (z: number) => void
   story: WorkshopStory | null
   title: string
+  viewport: string
+  zoom: number
 }

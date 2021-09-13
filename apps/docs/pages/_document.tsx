@@ -1,4 +1,3 @@
-import {white} from '@sanity/color'
 import NextDocument, {
   DocumentContext,
   DocumentProps,
@@ -52,7 +51,6 @@ class Document extends NextDocument<DocumentProps & {styleTags: React.ReactNode}
     return (
       <Html lang="en-US">
         <Head>
-          {/* Global site tag (gtag.js) - Google Analytics */}
           {ga.trackingId && (
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga.trackingId}`} />
           )}
@@ -60,9 +58,16 @@ class Document extends NextDocument<DocumentProps & {styleTags: React.ReactNode}
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
           <meta name="theme-color" content={app.themeColor} />
           <meta name="msapplication-tap-highlight" content="no" />
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+          />
           <link rel="apple-touch-icon" sizes="48x48" href={`${basePath}/sanity-favicon-48.png`} />
           <link rel="apple-touch-icon" sizes="72x72" href={`${basePath}/sanity-favicon-72.png`} />
           <link rel="apple-touch-icon" sizes="96x96" href={`${basePath}/sanity-favicon-96.png`} />
+          <meta name="description" content={app.description} />
+          <meta name="twitter:site" content="@sanity_io" />
+          <meta property="og:site_name" content={app.siteName} />
           <link
             rel="apple-touch-icon"
             sizes="144x144"

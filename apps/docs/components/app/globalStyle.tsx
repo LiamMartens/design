@@ -6,17 +6,28 @@ export const GlobalStyle = createGlobalStyle((props: {theme: Theme}) => {
   const color = theme.sanity.color.base
 
   return css`
+    html {
+      text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     html,
     body,
     #__next {
       height: 100%;
     }
 
-    body {
+    html {
       background-color: ${color.bg};
-      color: ${color.fg};
+    }
+
+    body {
       -webkit-font-smoothing: antialiased;
       margin: 0;
+    }
+
+    #__next {
+      color: ${color.fg};
     }
   `
 })

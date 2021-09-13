@@ -11,17 +11,16 @@ const Iframe = styled.iframe`
   border: 0;
   height: 100%;
   width: 100%;
+  border-radius: inherit;
+  overflow: hidden;
 `
 
-export function WorkshopStoryCanvas(props: {
+export function StoryCanvas(props: {
   frameRef: React.Ref<HTMLIFrameElement>
   ready: boolean
-  scheme: 'light' | 'dark'
-  viewport: string
-  zoom: number
 }): React.ReactElement {
-  const {frameRef, ready, scheme, viewport, zoom} = props
-  const {frameUrl, location, scope, story} = useWorkshop()
+  const {frameRef, ready} = props
+  const {frameUrl, location, scheme, scope, story, viewport, zoom} = useWorkshop()
   const [currentFrameUrl] = useState(() => `${frameUrl}?path=${location.path}&scheme=${scheme}`)
   const v = VIEWPORT_OPTIONS.find((o) => o.name === viewport)
 
@@ -58,6 +57,7 @@ export function WorkshopStoryCanvas(props: {
             <Card
               height="fill"
               overflow="hidden"
+              radius={2}
               shadow={ready ? 1 : undefined}
               tone={ready ? undefined : 'inherit'}
             >

@@ -1,10 +1,4 @@
-import {
-  studioTheme,
-  ThemeColorProvider,
-  ThemeProvider,
-  useGlobalKeyDown,
-  usePrefersDark,
-} from '@sanity/ui'
+import {studioTheme, ThemeProvider, useGlobalKeyDown, usePrefersDark} from '@sanity/ui'
 import {Workshop, WorkshopLocation} from '@sanity/ui-workshop'
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import ReactDOM from 'react-dom'
@@ -77,9 +71,7 @@ function Root() {
 
   return (
     <ThemeProvider scheme={scheme} theme={studioTheme}>
-      <ThemeColorProvider tone="transparent">
-        <GlobalStyle />
-      </ThemeColorProvider>
+      <GlobalStyle />
       <Workshop
         collections={WORKSHOP_COLLECTIONS}
         frameUrl="/frame/"

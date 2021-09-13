@@ -7,7 +7,7 @@
   "scripts": {
     "build": "NODE_ENV=production vite build",
     "clean": "rimraf dist",
-    "dev": "vite",
+    "dev": "vite --host",
     "lint": "eslint . --ext .js,.jsx,.mjs,.ts,.tsx --quiet",
     "prebuild": "yarn clean",
     "scopes:build": "node -r esbuild-register scripts/scopes/build.ts",

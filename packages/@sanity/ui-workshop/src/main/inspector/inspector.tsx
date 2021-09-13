@@ -1,9 +1,9 @@
 import {Box, ButtonTone, Card, Layer, Tab, TabList, TabPanel, Text} from '@sanity/ui'
-import {AxeResults} from 'axe-core'
 import React, {useMemo, useState} from 'react'
 import {features} from '../../features'
 import {Prop} from '../../props'
 import {useScope} from '../../useScope'
+import {useWorkshop} from '../../useWorkshop'
 import {InspectAxeResults} from './inspectAxeResults'
 
 interface InspectorTab {
@@ -13,8 +13,8 @@ interface InspectorTab {
   tone?: ButtonTone
 }
 
-export function WorkshopStoryInspector(props: {axeResults: AxeResults | null}): React.ReactElement {
-  const {axeResults} = props
+export function Inspector(): React.ReactElement {
+  const {axeResults} = useWorkshop()
   const scope = useScope()
 
   const hasA11yViolations = (axeResults?.violations?.length || 0) > 0
@@ -58,13 +58,7 @@ export function WorkshopStoryInspector(props: {axeResults: AxeResults | null}): 
   const showTabs = tabs.length > 1
 
   return (
-    <Card
-      borderLeft
-      display={['none', 'none', 'block']}
-      flex={1}
-      overflow="auto"
-      style={{minWidth: 180, maxWidth: 300}}
-    >
+    <div>
       {showTabs && (
         <Layer style={{position: 'sticky', top: 0}}>
           <Card padding={2} shadow={1}>
@@ -101,6 +95,6 @@ export function WorkshopStoryInspector(props: {axeResults: AxeResults | null}): 
         ))}
 
       {!showTabs && currentTab && <Box padding={2}>{currentTab.panel}</Box>}
-    </Card>
+    </div>
   )
 }

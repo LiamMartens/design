@@ -1,3 +1,4 @@
+import {hues} from '@sanity/color'
 import {
   LayerProvider,
   studioTheme,
@@ -25,6 +26,17 @@ export function AppProvider(props: {
   )
 
   useEffect(() => setColorScheme(prefersDark ? 'dark' : 'light'), [prefersDark])
+
+  useEffect(() => {
+    const themeColorElement = document.querySelector('meta[name="theme-color"]')
+
+    themeColorElement?.setAttribute(
+      'content',
+      colorScheme === 'dark'
+        ? studioTheme.color.dark.default.base.bg
+        : studioTheme.color.light.default.base.bg
+    )
+  }, [colorScheme])
 
   const contextValue = useMemo(
     () => ({colorScheme, data, menu, params, setColorScheme, zOffsets}),
