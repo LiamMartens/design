@@ -4,15 +4,23 @@
   "sideEffects": false,
   "source": "./src/index.ts",
   "exports": {
-    "cli": "./lib/tsdoc-to-portable-text.cli.js",
-    "require": "./lib/tsdoc-to-portable-text.js",
-    "default": "./lib/tsdoc-to-portable-text.modern.js"
+    ".": {
+      "source": "./src/index.ts",
+      "require": "./lib/tsdoc-to-portable-text.js",
+      "default": "./lib/tsdoc-to-portable-text.modern.js"
+    },
+    "./cli": {
+      "source": "./src/cli/index.ts",
+      "require": "./lib/tsdoc-to-portable-text-cli.js",
+      "module": "./lib/tsdoc-to-portable-text-cli.module.js",
+      "default": "./lib/tsdoc-to-portable-text-cli.modern.js"
+    }
   },
   "main": "./lib/tsdoc-to-portable-text.js",
   "module": "./lib/tsdoc-to-portable-text.module.js",
   "types": "./lib/dts/index.d.ts",
   "bin": {
-    "tsdoc-to-portable-text": "./lib/cli.js"
+    "tsdoc-to-portable-text": "./bin/tsdoc-to-portable-text"
   },
   "files": [
     "./lib/",
@@ -21,14 +29,15 @@
   "author": "Sanity.io <hello@sanity.io>",
   "license": "MIT",
   "scripts": {
-    "build": "run-s build:microbundle copy:json && chmod +x lib/cli.js",
-    "build:microbundle": "microbundle --format modern,esm,cjs --target node --tsconfig tsconfig.lib.json src/{cli,index}.ts",
+    "build": "run-s build:bundle copy:json",
+    "build:bundle": "../../../bin/pkg-utils bundle --target node --tsconfig tsconfig.lib.json --validate",
     "clean": "rimraf lib",
     "copy:json": "cpx 'src/extract/*.json' lib/",
     "lint": "eslint . --ext .js,.jsx,.mjs,.ts,.tsx --quiet",
     "prebuild": "yarn clean",
     "test": "jest --runInBand",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "watch": "../../../bin/pkg-utils bundle --target node --tsconfig tsconfig.lib.json --watch"
   },
   "dependencies": {
     "@microsoft/api-extractor": "^7.19.4",
@@ -36,6 +45,7 @@
     "@microsoft/tsdoc": "^0.13.2",
     "@types/cpx": "^1.5.2",
     "chalk": "^4.1.2",
+    "cpx": "^1.5.0",
     "mkdirp": "^1.0.4",
     "pkg-up": "^3.1.0",
     "slugify": "^1.6.5",
@@ -44,7 +54,6 @@
   },
   "devDependencies": {
     "@types/mkdirp": "^1.0.2",
-    "@types/tmp": "^0.2.3",
-    "cpx": "^1.5.0"
+    "@types/tmp": "^0.2.3"
   }
 }

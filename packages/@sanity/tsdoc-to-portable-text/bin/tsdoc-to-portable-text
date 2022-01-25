@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+/* eslint-disable @typescript-eslint/no-var-requires, no-console */
+
+const chalk = require('chalk')
+const {getCLIContext, run} = require('../lib/tsdoc-to-portable-text-cli')
+
+getCLIContext()
+  .then(run)
+  .catch((err) => {
+    console.error(`${chalk.red('error')} ${err.message}`)
+    process.exit(1)
+  })
