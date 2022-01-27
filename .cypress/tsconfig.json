@@ -1,9 +1,11 @@
 {
-  "extends": "../tsconfig",
+  "extends": "../tsconfig.settings",
   "compilerOptions": {
+    "composite": true,
     "target": "es5",
     "lib": ["es5", "dom"],
-    "types": ["cypress", "cypress-real-events", "node"]
+    "types": ["cypress", "cypress-real-events", "node"],
+    "outDir": "./build"
   },
   "include": ["./**/*.ts"]
 }

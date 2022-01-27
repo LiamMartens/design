@@ -8,6 +8,8 @@
     "resolveJsonModule": true
   },
   "references": [
+    {"path": "./.cypress"},
+
     {"path": "./apps/docs"},
     {"path": "./apps/studio"},
     {"path": "./apps/workshop"},
