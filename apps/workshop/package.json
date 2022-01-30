@@ -5,11 +5,12 @@
   "main": "package.json",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production vite build",
+    "build": "vite build",
     "clean": "rimraf build dist",
     "dev": "vite",
     "lint": "eslint . --ext .js,.jsx,.mjs,.ts,.tsx --quiet",
     "prebuild": "yarn clean",
+    "prestart": "yarn build",
     "scopes:build": "node -r esbuild-register scripts/scopes/build.ts",
     "start": "http-server -a localhost -c-0 -p 9009 -s -P http://localhost:9009/index.html? dist",
     "tsc": "tsc -b",

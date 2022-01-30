@@ -44,9 +44,12 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@types/refractor": "^3.0.2",
+    "expect-playwright": "^0.8.0",
+    "playwright": "^1.18.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "vite": "^2.7.13"
   },
   "peerDependencies": {
     "react": "^16.9 || ^17",

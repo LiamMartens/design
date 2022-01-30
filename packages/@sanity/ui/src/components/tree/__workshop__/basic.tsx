@@ -5,61 +5,61 @@ import React from 'react'
 export default function BasicStory() {
   return (
     <Box padding={[4, 5, 6]}>
-      <Tree space={1}>
-        <TreeItem expanded text="Fruit">
-          <TreeItem text="Oranges" />
-          <TreeItem text="Pineapple" selected />
-          <TreeItem text="Apples">
-            <TreeItem href="#apples-macintosh" icon={LinkIcon} text="Macintosh" />
-            <TreeItem text="Granny Smith" />
-            <TreeItem text="Fuji" />
+      <Tree id="tree" space={1}>
+        <TreeItem expanded id="item-0" text="Fruit">
+          <TreeItem id="item-0-0" text="Oranges" />
+          <TreeItem id="item-0-1" text="Pineapple" selected />
+          <TreeItem id="item-0-2" text="Apples">
+            <TreeItem href="#apples-macintosh" icon={LinkIcon} id="id-0-2-0" text="Macintosh" />
+            <TreeItem text="Granny Smith" id="id-0-2-1" />
+            <TreeItem text="Fuji" id="id-0-2-2" />
           </TreeItem>
-          <TreeItem text="Bananas" />
-          <TreeItem text="Pears">
-            <TreeItem text="Anjou" />
-            <TreeItem text="Bartlett" />
-            <TreeItem text="Bosc" />
-            <TreeItem text="Concorde" />
-            <TreeItem text="Seckel" />
-            <TreeItem text="Starkrimson" />
-          </TreeItem>
-        </TreeItem>
-        <TreeItem text="Vegetables">
-          <TreeItem text="Podded vegetables">
-            <TreeItem text="Lentil" />
-            <TreeItem text="Pea" />
-            <TreeItem text="Peanut" />
-          </TreeItem>
-          <TreeItem text="Bulb and stem vegetables">
-            <TreeItem text="Asparagus" />
-            <TreeItem text="Celery" />
-            <TreeItem text="Leek" />
-            <TreeItem text="Onion" />
-          </TreeItem>
-          <TreeItem text="Root and tuberous vegetables">
-            <TreeItem text="Carrot" />
-            <TreeItem text="Ginger" />
-            <TreeItem text="Parsnip" />
-            <TreeItem text="Potato" />
+          <TreeItem id="item-0-3" text="Bananas" />
+          <TreeItem id="item-0-4" text="Pears">
+            <TreeItem id="item-0-4-0" text="Anjou" />
+            <TreeItem id="item-0-4-1" text="Bartlett" />
+            <TreeItem id="item-0-4-2" text="Bosc" />
+            <TreeItem id="item-0-4-3" text="Concorde" />
+            <TreeItem id="item-0-4-4" text="Seckel" />
+            <TreeItem id="item-0-4-5" text="Starkrimson" />
           </TreeItem>
         </TreeItem>
-        <TreeItem text="Grains">
-          <TreeItem text="Cereal grains">
-            <TreeItem text="Barley" />
-            <TreeItem text="Oats" />
-            <TreeItem text="Rice" />
+        <TreeItem id="item-1" text="Vegetables">
+          <TreeItem id="item-1-0" text="Podded vegetables">
+            <TreeItem id="item-1-0-0" text="Lentil" />
+            <TreeItem id="item-1-0-1" text="Pea" />
+            <TreeItem id="item-1-0-2" text="Peanut" />
           </TreeItem>
-          <TreeItem text="Pseudocereal grains">
-            <TreeItem text="Amaranth" />
-            <TreeItem text="Buckwheat" />
-            <TreeItem text="Chia" />
-            <TreeItem text="Quinoa" />
+          <TreeItem id="item-1-1" text="Bulb and stem vegetables">
+            <TreeItem id="item-1-1-0" text="Asparagus" />
+            <TreeItem id="item-1-1-1" text="Celery" />
+            <TreeItem id="item-1-1-2" text="Leek" />
+            <TreeItem id="item-1-1-3" text="Onion" />
           </TreeItem>
-          <TreeItem text="Oilseeds">
-            <TreeItem text="India mustard" />
-            <TreeItem text="Safflower" />
-            <TreeItem text="Flax seed" />
-            <TreeItem text="Poppy seed" />
+          <TreeItem id="item-1-2" text="Root and tuberous vegetables">
+            <TreeItem id="item-1-2-0" text="Carrot" />
+            <TreeItem id="item-1-2-1" text="Ginger" />
+            <TreeItem id="item-1-2-2" text="Parsnip" />
+            <TreeItem id="item-1-2-3" text="Potato" />
+          </TreeItem>
+        </TreeItem>
+        <TreeItem id="item-2" text="Grains">
+          <TreeItem id="item-2-0" text="Cereal grains">
+            <TreeItem id="item-2-0-0" text="Barley" />
+            <TreeItem id="item-2-0-1" text="Oats" />
+            <TreeItem id="item-2-0-2" text="Rice" />
+          </TreeItem>
+          <TreeItem id="item-2-1" text="Pseudocereal grains">
+            <TreeItem id="item-2-1-0" text="Amaranth" />
+            <TreeItem id="item-2-1-1" text="Buckwheat" />
+            <TreeItem id="item-2-1-2" text="Chia" />
+            <TreeItem id="item-2-1-3" text="Quinoa" />
+          </TreeItem>
+          <TreeItem id="item-2-2" text="Oilseeds">
+            <TreeItem id="item-2-2-0" text="India mustard" />
+            <TreeItem id="item-2-2-1" text="Safflower" />
+            <TreeItem id="item-2-2-2" text="Flax seed" />
+            <TreeItem id="item-2-2-3" text="Poppy seed" />
           </TreeItem>
         </TreeItem>
       </Tree>

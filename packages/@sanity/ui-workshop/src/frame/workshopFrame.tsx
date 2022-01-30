@@ -252,7 +252,7 @@ const InnerWorkshopFrame = forwardRef(function InnerWorkshopFrame(
           value={state.value}
         >
           <Suspense fallback={null}>
-            <Card as="main" height="fill" ref={ref}>
+            <Card as="main" height="fill" id="main" ref={ref}>
               {story && createElement(story.component)}
             </Card>
           </Suspense>

@@ -19,6 +19,7 @@ export default defineConfig({
   define: {
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
   },
+  logLevel: process.env.DEBUG === '1' ? undefined : 'silent',
   plugins: [reactRefresh(), pluginWorkshopScopes(), designWorkshop()],
   resolve: {
     alias: [
@@ -59,6 +60,6 @@ export default defineConfig({
   root: path.resolve(__dirname, 'src'),
   server: {
     host: true,
-    port: 9009,
+    port: process.env.PORT ? Number(process.env.PORT) : 9009,
   },
 })

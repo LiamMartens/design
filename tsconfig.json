@@ -1,15 +1,24 @@
 {
   "extends": "./tsconfig.settings",
-  "include": ["./*.js", "./package.json", "./scripts/", "./test/"],
+  "include": [
+    "./*.js",
+    "./apps/workshop/vite.config.ts",
+    "./package.json",
+    "./scripts/",
+    "./test/"
+  ],
   "compilerOptions": {
     "outDir": "./build/dts",
     "allowJs": true,
     "checkJs": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@sanity/*": ["./packages/@sanity/*/src"]
+    }
   },
   "references": [
-    {"path": "./.cypress"},
-
     {"path": "./apps/docs"},
     {"path": "./apps/studio"},
     {"path": "./apps/workshop"},
