@@ -3,7 +3,7 @@
   "include": ["./src/", "./test/", "./typings/"],
   "compilerOptions": {
     "composite": true,
-    "rootDir": "./",
+    "rootDir": "../../../",
     "outDir": "./lib/dts/",
     "module": "ES2020",
     "jsx": "react"
